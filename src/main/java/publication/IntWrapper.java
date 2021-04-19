@@ -9,7 +9,7 @@ public class IntWrapper {
     }
 
     public void validateSanity() {
-        if (value != value) {
+        if (value == 0) {
             throw new IllegalStateException("value != value occurred");
         }
     }
