@@ -15,7 +15,6 @@ public class ThisEscape {
             @Override
             public void onEvent(Event event) {
                 checkSanity();
-                ThisEscape.this.checkSanity();
             }
         });
         value = 42;
