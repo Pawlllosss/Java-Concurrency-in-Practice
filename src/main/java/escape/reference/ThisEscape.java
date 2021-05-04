@@ -29,7 +29,7 @@ public class ThisEscape {
     public static void main(String[] args) {
         EventSource eventSource = new EventSource();
         eventSource.start();
-        for (int i = 0 ; i < 150000 ; i++) {
+        for (int i = 0 ; i < 1500000 ; i++) {
             new ThisEscape(eventSource);
         }
         System.out.println("Out of here");

@@ -11,7 +11,7 @@ public class EventSource extends Thread {
     public void run() {
         while (true) {
             try {
-                listeners.take().onEvent(null);
+                listeners.take().onEvent(new Event());
             } catch (InterruptedException e) {
                 break;
             }
