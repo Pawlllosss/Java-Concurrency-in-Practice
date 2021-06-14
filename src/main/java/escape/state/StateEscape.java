@@ -10,7 +10,7 @@ public class StateEscape {
 
     private List<String> states = new LinkedList<>(Arrays.asList("user1", "user2", "user3"));
 
-    public List<String> getStates() {
+    public synchronized List<String> getStates() {
         return states;
     }
 
