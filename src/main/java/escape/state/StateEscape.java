@@ -1,27 +1,25 @@
 package escape.state;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public class StateEscape {
 
-    // LISTING 3.6
+    // LISTING 3.6 and 5.6
 
-    private String[] states = new String[] {"user1", "user2", "user3"};
+    private List<String> states = new LinkedList<>(Arrays.asList("user1", "user2", "user3"));
 
-    public String[] getStates() {
+    public List<String> getStates() {
         return states;
-    }
-
-    public void printStates() {
-        for (String state : states) {
-            System.out.print(state + " ");
-        }
-        System.out.println();
     }
 
     public static void main(String[] args) {
         StateEscape stateEscape = new StateEscape();
-        String[] states = stateEscape.getStates();
-        stateEscape.printStates();
-        states[0] = "maliciousUser1";
-        stateEscape.printStates();
+        List<String> states = stateEscape.getStates();
+        System.out.println(states);
+        states.set(2, "maliciousUser1");
+        // hidden iterator for states, with multiple threads may cause ConcurrentModificationException
+        System.out.println(states);
     }
 }
